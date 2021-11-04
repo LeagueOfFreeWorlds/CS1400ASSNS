@@ -1,0 +1,10 @@
+#Requirements:
+Program has to place a circular pattern on the user's display given certain required information in order
+to create a mandela-like image. Program gives user a choice between a rectangle mandela, a circular mandela,
+or a random pattern generator that generates a random n amount of rectangle and circle patterns, with n
+being the number of patterns the user wants when the program asks for amount of patterns desired.
+
+## Analysis and design:
+Program first goes through a while loop that continues to run until user requests that the program terminates
+at the end of the while loop. The program prints a menu to the display that shows the user what it wishes
+to use.

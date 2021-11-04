@@ -1,0 +1,39 @@
+# Requirements:
+Program has to generate a checkers table given user input on width and height of where the checkers will be drawn upon.
+#Analysis and design:
+Program is comprised for three functions:
+- A function for drawing the checkerboard
+- A function for creating the checker tiles
+- A function that checks if user input was correct
+- A function that takes user input, then utilizes other functions above to print a checkerboard to the display.
+Program draws checkerboard and checker pieces using the turtle.py module within the standard python library. The program
+also relies on a module created for the purposes of generating a checkerboard to the display called checkers.py
+Within the main program class, the program imports the checkers.py module and runs the checkerboard generator function
+called runCheckerDrawer().
+The runCheckerDrawer() first runs into input requests, where it has to ask the user to enter location coordinates,
+checkerboard height, and checkerboard width. Once all three inputs have been entered, the program checks to ensure
+that the inputs are valid, or if the program needs to be restarted for the user to enter their data properly. This is done
+through a function that takes inputs and evalutes whether or not an integer was entered, or if something else such as
+a string, or nothing at all; function returns False if integer requirement was not met, and True if it was.
+If the validator returns true, the function will continue with printing the checkerboard to the display, followed by then
+checking the dimensions of what was entered, and then drawing in checker tiles.
+The checker tiles themselves are 10 units in lenth, but there needs to be 10 units of distance between the checker tiles,
+in order for the second row to be printed to the display properly without overlapping tiles.
+This is done by setting the tile dimension to 20 units (2x the size), and then using the 20 units size in the basic area
+calculation of the board:
+    (height of the table * width of the table) / (area of tile dimension)
+Additionally, the program also check how many tiles can fit within the width and height of the board:
+        checkerMWidth = round((wSize) / checkerSideDim)
+        checkerMHeight = round((hSize) / checkerSideDim)
+Now the program will use data within a while loop that continues to run as long as the amount of tiles present is less
+than the maximum amount that the board can fit.
+As this is happening, the program will print the first row of tiles, until they have reached the maximum amount that can
+fit within the width of the board. Once the width has been filled, the program then moves up by 20 units and continues
+to print more tiles on the next row until it has been filled as well. This repeats until the first set of checkers has
+been completed and meets the amount that the board can fill.
+Program then fills in the second set of rows within another while loop as it works now with the actual length dimensions
+of the tiles to fill in the spaces, and starts its position at a point 10 above and 10 units to the right to move
+in-between the spaces of the first set of checker tiles. The while loop process is completed under identical circumstances
+as the previous while loop.
+## Testing:
+Program has been tested with a 100, 100 square, a 300, 300 square, a 400, 100 rectangle, and

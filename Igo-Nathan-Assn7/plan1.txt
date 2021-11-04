@@ -1,0 +1,21 @@
+# Requirements:
+The program generates a pyramid structure of numbers, based on how the user enters how many
+rows that they want to have for the pyramid. The larger the number of columns, the
+greater the size of the pyramid. The program has to increase the number of columns for
+every next row, in order to give the appearance of a pyramid structure.
+The only thing the program should ask for, is just for the number of rows the user wants.
+From there, the program has to generate a pyramid with the desired amount of rows that
+the user inputted.
+## Analysis and design:
+Program utilizes for loops in order to print pyramid pattern to console. This is done by first calculating the amount
+of spaces needed at the beginning in order to fit the bottom rows.
+The spacing calculation ensures that the bottom row has one or more spaces from the edge of the console. The number of rows
+increases in length by about 2 every other time. Subtracting 2 makes it easier to indent for larger number values later
+on in the program, as digits >9 have a major offset from the rest of the pyramid.
+
+Once row as been indented, second for loop prints the value of the row based on i value of for loop that it's nested in.
+Final operation within the for loop checks if the value of the row exceeds 9, to which case the program changes over to
+using a larger spacing constant to better indent the larger digits to the rest of the pyramid.
+## Testing:
+Program has been tested to work with the following row sizes: 1, 2, 6, 12, 15, 20, 40, 50
+Since program has had no errors and meets the requirements without issues, it is functional.
