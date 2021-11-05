@@ -18,12 +18,21 @@ class Face:
         self.__drawEyes()
         self.__drawMouth()
     # Boolean return statements for the display:
-    def isSmile(self, mouth):
-        return self.__smile
+    def isSmile(self):
+        if self.__smile:
+            return True
+        else:
+            return False
     def isHappy(self):
-        self.__happy()
+        if self.__happy():
+            return True
+        else:
+            return False
     def isDarkEyes(self):
-        self.__darkEyes()
+        if self.__darkEyes():
+            return True
+        else:
+            return False
     ################################################
     # Change functions:
     def changeMouth(self):
@@ -58,39 +67,43 @@ class Face:
     '''
     def __drawHead(self):
         if self.__happy:
-            self.tr.goto(-200, -200)
-            self.tr.setfill("yellow")
+            self.tr.goto(-100, -100)
+            self.tr.fillcolor("yellow")
             self.tr.pendown()
             self.tr.begin_fill()
             self.tr.circle(100)
             self.tr.end_fill()
             self.tr.penup()
         else:
-            self.tr.goto(-200, -200)
-            self.tr.setfill("red")
+            self.tr.goto(-100, -100)
+            self.tr.fillcolor("red")
             self.tr.pendown()
             self.tr.begin_fill()
             self.tr.circle(100)
             self.tr.end_fill()
             self.tr.penup()
     def __drawEyes(self):
-        self.tr.goto(-150, -50)
-        self.tr.setfill(self.ecolor)
-        '''
-        Bizarre method for drawing 1st and 2nd eye:
-        '''
+        if self.__darkEyes:
+            self.tr.fillcolor("black")
+        else:
+            self.tr.fillcolor("blue")
+
+        #self.tr.goto(-130, 50)
         for i in range(2):
+            self.tr.goto(-130 + (i * 80), 40)
             self.tr.pendown()
             self.tr.begin_fill()
-            self.tr.circle(20)
+            self.tr.circle(10)
             self.tr.end_fill()
             self.tr.penup()
-            self.tr.goto(-150 + (i * 50), -50)
+
+
         # Draw mouth checks if moody should frown or smile.
         # Boolean values changed by changeMouth.
     def __drawMouth(self):
+        self.tr.pensize(7)
         if self.__smile:
-            self.tr.goto(-100, -100)
+            self.tr.goto(-175, -10)
             self.tr.setheading(270)
             self.tr.pendown()
             self.tr.circle(75, 180)
@@ -101,6 +114,7 @@ class Face:
             self.tr.pendown()
             self.tr.circle(75, 180)
             self.tr.penup()
+        self.tr.pensize(1)
 ##########################################################
 
 def main():
