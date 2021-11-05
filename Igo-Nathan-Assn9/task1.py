@@ -36,10 +36,20 @@ class Face:
     def changeEmotion(self):
         if self.emotion == "happy":
             self.__happy = False
+            self.draw_face()
+        else:
+            self.__happy = True
+            self.draw_face()
 
         self.draw_face()
     def changeEyes(self):
-        <Fill-In>
+        if self.eyes == "Black":
+            self.__darkEyes == False
+            self.draw_face()
+        else:
+            self.__darkEyes == True
+            self.draw_face()
+
         self.draw_face()
     ##################################################
     # drawing methods for draw_face
@@ -49,7 +59,7 @@ class Face:
     def __drawHead(self):
         if self.__happy:
             self.tr.goto(-200, -200)
-            self.tr.setfill(self.color)
+            self.tr.setfill("yellow")
             self.tr.pendown()
             self.tr.begin_fill()
             self.tr.circle(100)
@@ -57,7 +67,7 @@ class Face:
             self.tr.penup()
         else:
             self.tr.goto(-200, -200)
-            self.tr.setfill(self.color)
+            self.tr.setfill("red")
             self.tr.pendown()
             self.tr.begin_fill()
             self.tr.circle(100)
