@@ -1,0 +1,77 @@
+# Requirements:
+Program has to be able to initially draw a face on a canvas, followed by
+then asking the user to enter to choose how they want to change the face,
+that generally appear as though the face's mood is being affected.
+Three basic parameters can be changed:
+- If the face is frowning or grinning.
+- If the face is yellow to indicate happiness, or red to indicate anger.
+- If the face has black eyes, or blue eyes.
+
+# Analysis:
+When the program is first ran, it prints the face to the canvas with default presets: smile,
+happy, black. These correspond to the face's mouth, facial color, and eye color. Once the face
+has been drawn, the console will then print a menu for the user to choose from. The menu also
+bases its output on what the current status of the face is. For instance, if the face is
+smiling, the menu will print the option: "Make me frown". When the user selects from the list,
+the program will then re-draw the face with the selection applied.
+# Design:
+The main() function drives the entire program - printing the face, instantiating the face
+object, and displaying the menu. The main() function first has to print the face to canvas:
+main() -> face(self, tr)
+The face class is comprised of multiple methods that each play a different role in drawing
+the face.
+draw_face() resets the canvas and re-draws the face, and then calls other methods to draw
+each component of the face: Head(), Eyes(), and Mouth(). The other three important methods
+are the boolean methods: isSmile, isHappy, isDarkEyes. These three methods check when the
+face is as well as has changed, which is also used by the menu to print what the user
+wants to change. So, the program will use face.isSmile, face.isHappy, and face.isDarkEyes, for
+determining whether to print for, say, the face's mouth, where it's either "frown" or "smile."
+The isSmile function will print either true or false, determined by whether the face is
+smiling (True) or Frowning (False). If the isSmile() method returns True, the menu then
+prints "Make me frown." The program will then have to use three other methods within the face
+class, and they are: changeMouth(), changeEmotion(), and changeEyes().
+These three functions change the boolean values of isSmile, isHappy, and isDarkEyes. If a menu
+item was selected to, say, change the face, the changeMouth() method will change isSmile from
+True to False, or False to True, depending on its existing condition. If the face was smiling,
+then the function changes the isSmile value to false, and then re-draws the face by calling
+draw_face(). The __drawMouth() method draws a 180 degree concave curve if __smile is True,
+and draws convex (frowning) if __smile is false. This process is the same with the other
+attributes of the face.
+
+# Testing:
+Test 1:
+Ran python script "task1.py" and face was drawn to canvas as expected. Menu also appeared
+as to be expected:
+    Change My Face
+    1) Make me frown
+    2) Make me angry
+    3) Make my eyes blue
+    0) Quit
+    Enter a selection:
+From there, I choose the first option by typing '1' in the selection box and hitting enter.
+The program redraws the canvas, with the face now showing an obvious frown.
+The menu now prints:
+    Change My Face
+    1) Make me smile
+    2) Make me angry
+    3) Make my eyes blue
+    0) Quit
+    Enter a selection:
+Test 2:
+With the menu now displaying options to change the face back to the original state, I also
+want to change some other characteristics. So I decide to select option 2. The menu prints,
+with options now changed reflecting my decision:
+    Change My Face
+    1) Make me smile
+    2) Make me happy
+    3) Make my eyes blue
+    0) Quit
+    Enter a selection:
+I also want to make the face smile again, so I select option 1 and once again the canvas prints
+the face correctly, with the menu showing options changed.
+    Change My Face
+    1) Make me frown
+    2) Make me happy
+    3) Make my eyes blue
+    0) Quit
+    Enter a selection:

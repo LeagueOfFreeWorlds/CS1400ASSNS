@@ -3,6 +3,7 @@ class Face:
     # Constructor:
     def __init__(self, tr, emotion, mouth, eyes):
         self.tr = tr
+        self.tr.speed(0)
         self.emotion = emotion
         self.mouth = mouth
         self.eyes = eyes
@@ -11,9 +12,8 @@ class Face:
         self.__darkEyes = True
     # Initial canvas function:
     def draw_face(self):
-        self.__smile = True
-        self.__happy = True
-        self.__darkEyes = True
+        self.tr.reset()
+        self.tr.penup()
         self.__drawHead()
         self.__drawEyes()
         self.__drawMouth()
@@ -24,50 +24,47 @@ class Face:
         else:
             return False
     def isHappy(self):
-        if self.__happy():
+        if self.__happy:
             return True
         else:
             return False
     def isDarkEyes(self):
-        if self.__darkEyes():
+        if self.__darkEyes:
             return True
         else:
             return False
     ################################################
     # Change functions:
     def changeMouth(self):
-        if self.mouth == "smile":
+        if self.__smile == True:
             self.__smile = False
             self.draw_face()
         else:
             self.__smile = True
             self.draw_face()
     def changeEmotion(self):
-        if self.emotion == "happy":
+        if self.__happy == True:
             self.__happy = False
             self.draw_face()
         else:
             self.__happy = True
             self.draw_face()
 
-        self.draw_face()
     def changeEyes(self):
-        if self.eyes == "Black":
-            self.__darkEyes == False
+        if self.__darkEyes == True:
+            self.__darkEyes = False
             self.draw_face()
         else:
-            self.__darkEyes == True
+            self.__darkEyes = True
             self.draw_face()
 
-        self.draw_face()
+
     ##################################################
     # drawing methods for draw_face
-    '''
-    I wonder if having an if else statement is really necessary here.
-    '''
+
     def __drawHead(self):
+        self.tr.goto(-100, -100)
         if self.__happy:
-            self.tr.goto(-100, -100)
             self.tr.fillcolor("yellow")
             self.tr.pendown()
             self.tr.begin_fill()
@@ -75,22 +72,21 @@ class Face:
             self.tr.end_fill()
             self.tr.penup()
         else:
-            self.tr.goto(-100, -100)
             self.tr.fillcolor("red")
             self.tr.pendown()
             self.tr.begin_fill()
             self.tr.circle(100)
             self.tr.end_fill()
             self.tr.penup()
+
     def __drawEyes(self):
         if self.__darkEyes:
             self.tr.fillcolor("black")
         else:
             self.tr.fillcolor("blue")
 
-        #self.tr.goto(-130, 50)
         for i in range(2):
-            self.tr.goto(-130 + (i * 80), 40)
+            self.tr.goto(-140 + (i * 80), 37)
             self.tr.pendown()
             self.tr.begin_fill()
             self.tr.circle(10)
@@ -101,18 +97,18 @@ class Face:
         # Draw mouth checks if moody should frown or smile.
         # Boolean values changed by changeMouth.
     def __drawMouth(self):
-        self.tr.pensize(7)
-        if self.__smile:
-            self.tr.goto(-175, -10)
+        self.tr.pensize(9)
+        if self.__smile == True:
+            self.tr.goto(-175, 0)
             self.tr.setheading(270)
             self.tr.pendown()
             self.tr.circle(75, 180)
             self.tr.penup()
-        else:
-            self.tr.goto(-100, -100)
+        elif self.__smile == False:
+            self.tr.goto(-30, -50)
             self.tr.setheading(90)
             self.tr.pendown()
-            self.tr.circle(75, 180)
+            self.tr.circle(70, 180)
             self.tr.penup()
         self.tr.pensize(1)
 ##########################################################
