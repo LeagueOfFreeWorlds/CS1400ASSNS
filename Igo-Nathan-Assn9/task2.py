@@ -1,4 +1,25 @@
 from modules.Blobber import Blobber
+
+def displayName(blobber):
+    print("Your Blobber's name is " + (blobber.dispName()).lower())
+def changeName(blobber):
+    name = input("Enter Blobber's new name: ")
+    blobber.setBlobName(name)
+    displayName(blobber)
+def displayColor(blobber):
+    print("Your Blobber's color is " + blobber.displayColor())
+def changeColor(blobber):
+    color = input("Enter Blobber's new color: ")
+    blobber.changeColor(color)
+    displayColor(blobber)
+def feedBlobber(blobber):
+    food = eval(input("Enter amount to you feed your Blobber: "))
+    blobber.feedBlobber(food)
+def blobberSpeak(blobber):
+    print(blobber.blobberSpeak())
+
+
+
 def main():
     name = input("Enter your Blobber's name: ")
     color = input("Enter your Blobber's color: ")
@@ -46,21 +67,4 @@ def main():
         elif choice == 7:
             done = True
     print("Thanks for taking care of a Blobber")
-def displayName(blobber):
-    print("Your Blobber's name is " + <Fill-In>)
-def changeName(blobber):
-    name = input("Enter Blobber's new name: ")
-    <Fill-In>
-    displayName(<Fill-In>)
-def displayColor(blobber):
-    print("Your Blobber's color is " + <Fill-In>)
-def changeColor(blobber):
-    color = input("Enter Blobber's new color: ")
-    <Fill-In>
-    displayColor(<Fill-In>)
-def feedBlobber(blobber):
-    food = eval(input("Enter amount to you feed your Blobber: "))
-    <Fill-In>
-def blobberSpeak(blobber):
-    print(<Fill-In>)
 main()
