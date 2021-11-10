@@ -1,0 +1,17 @@
+# Requirements:
+The program is a sort of pet simulation, where the user can create a new pet,
+called "blobbers" that have a name, a color, and have to be fed in order to
+remain alive. During first startup, the program has to print a menu that
+allows the user to set name, color, and size of their blobber.
+# Design:
+The blobber's initial health, or "happiness", is determinate on the volume it
+was given at creation. Blobbers are cylindrical creatures, so the larger the
+radius and height, the more health that the blobber has.
+If the user doesn't take care to feed the blobber properly, such as
+the blobber being malnourished (happiness <90%) or overfed (happiness >110%),
+the blobber will immediately turn to dust. The blobber's health status is
+heavily dependant on the progression of time. Every second, the blobber's
+health decrements by 0.02%, making it so that the user has to continue to
+feed their blobber before it perishes.
+The name and color of the blobber can also be changed at anytime from within
+the menu

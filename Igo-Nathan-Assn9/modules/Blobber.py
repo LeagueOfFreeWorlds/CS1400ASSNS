@@ -3,7 +3,7 @@ from math import pi
 class Blobber:
     # Constructor:
     def __init__(self, name, color, radius, height):
-        self.baseTime = time
+        self.baseTime = time()
         self.__alive = True
         self.__name = name
         self.__color = color
@@ -11,14 +11,17 @@ class Blobber:
         self.__height = height
         self.__health = pi * (self.__radius ** 2) * self.__height
         self.__hStat = 0
+        self.__hpStat = 100
+        self.hDecrement()
         ##############################################
         # The timer method changes the status of the blobber as it
         # continues to live.
     def getBlobberLifeTimer(self):
-        return time() - self.baseTime
+        x = time() - self.baseTime
+        return x
     # Returns tuple for vitalsOK:
     def vitalsOK(self):
-        return self.__hpStat(), self.__alive
+        return self.__hpStat, self.__alive
 #################################################
     def dispName(self):
         return self.__name
@@ -29,10 +32,8 @@ class Blobber:
     def changeColor(self, color):
         self.__color = color
     def hDecrement(self):
-        while True:
-            if (self.baseTime % 1 == 0):
-                self.blobHealth()
-    ## The blob Health decrements every second based on hDecrement
+        self.blobHealth()
+    # The blob Health decrements every second based on hDecrement
     def blobHealth(self):
         self.__hStat = self.__health - (self.__health * 0.002)
         self.__hpStat = (self.__hStat / self.__health) * 100
