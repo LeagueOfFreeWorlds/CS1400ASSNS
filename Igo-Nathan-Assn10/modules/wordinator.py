@@ -8,9 +8,12 @@ class Wordinator:
     def __add__(self, other):
         return Wordinator(self.__value + other.getValue())
     def __sub__(self, other):
-
+        return Wordinator(self.__value + other.getValue())
+    def __str__(self):
+        return str(self.__value)
     def __mul__(self, other):
-
-    def __add__(self, other):
+        return Wordinator(self.__value * other.getValue())
+    def __mod__(self, other):
+        return Wordinator(self.__value % other.getValue())
 
 
