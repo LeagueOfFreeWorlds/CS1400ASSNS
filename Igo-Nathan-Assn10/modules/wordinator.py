@@ -15,5 +15,7 @@ class Wordinator:
         return Wordinator(self.__value * other.getValue())
     def __mod__(self, other):
         return Wordinator(self.__value % other.getValue())
+    def __lt__(self, other):
+        return Wordinator(self.__value < other.getValue)
 
 
