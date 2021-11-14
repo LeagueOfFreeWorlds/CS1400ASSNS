@@ -7,7 +7,6 @@ def main():
 
     wordinator1 = Wordinator(word1)
     wordinator2 = Wordinator(word2)
-    #Wordinator(wordinator1, wordinator2)
     done = False
 
     while not done:
@@ -45,20 +44,20 @@ def main():
             done = True
 
 def firstWord(wordinator1, wordinator2):
-    print("The first word is " + str(min(wordinator1, wordinator2)))
+    print("The first word is " + str(wordinator1))
 # Concatenates word1 and word2 to make "big word"
 def bigWord(wordinator1, wordinator2):
     print("The Big Word is " + (wordinator1 + wordinator2))
 # Prints the first and second words, repeating.
 def wordFactor(wordinator1, wordinator2):
     factor = int(input("Enter an integer factor: "))
+    factor = Wordinator(factor)
     word1 = wordinator1 * factor
     word2 = wordinator2 * factor
     print("Word factor one is " + word1)
     print("Word factor two is " + word2)
 
 def mixWords(wordinator1, wordinator2):
-    Wordinator.mixture()
     print("The mixed word is " + (wordinator1 / wordinator2))
 
 def midWords(wordinator1, wordinator2):

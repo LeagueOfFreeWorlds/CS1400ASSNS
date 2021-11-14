@@ -1,0 +1,29 @@
+# Requirements:
+Program has to have the ability to modify two strings that the user provides when
+starting up. Essentially, when initiated, the program has to be able to receive two
+inputs (string 1) and (string 2). From there, the program has to be able to print a menu
+to which the user can choose how they want to display the string differently.
+
+## Analysis:
+Program begins with having the user provide input for word1 and word2, of which will
+be passed into the Wordinator object, which is a separate class that will handle the
+operation of changing the behavior of the string output.
+A menu is then printed to the display, giving the user options on how they want to
+change the output of the string.
+This is then followed by whatever the user's input being transferred to one of the
+corresponding options from the menu.
+The first selection takes the first and second words (now as class objects), and
+returns whichever one comes first in alphabetical order.
+
+## Design:
+The wordinator class located within the modules directory of the program handles
+output behavior of strings based upon operators that are being used. With dunder
+methods, the use of arithmetic operators are given a different purpose to python.
+The section of code below, for instance, uses the modulus (%) operator, that is
+in-turn used by the overloading operator method within the Wordinator class:
+ word1, word2 = wordinator1 % wordinator2
+    print("Midword One is " + word1)
+    print("Midword Two is " + word2)
+def __mod__(self, other)
+This is the case with other menu options, where an operator is used for the wordinator
+to be able to invoke the dunder methods.
