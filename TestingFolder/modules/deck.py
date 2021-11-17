@@ -1,6 +1,8 @@
 from modules.card import Card
 import random
 class Deck:
+    # The shuffle program allowed us to reshuffle the
+    # deck randomly.
     def __init__(self):
         self.shuffle()
 

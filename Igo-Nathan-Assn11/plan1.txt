@@ -1,0 +1,17 @@
+
+
+# UML ###############
+main():
+- Menu
+- Selection check
+- thinking(): display loading animation.
+
+
+
+#####################
+ORBIAN STARTER:
+- Volume of orbians
+- Age of orbians
+- Name of orbians
+- Time of orbain birth
+#####################
