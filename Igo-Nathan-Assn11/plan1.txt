@@ -3,7 +3,41 @@ The program is a simulation of a strange species called "Orbians". When first ra
 the program will display a title menu:
 "WELCOME TO ORBIAN FAMILY"
 From there, the user has to hit the Enter key (or really any key) to start the orbian
-creation menu.
+creation menu. The menu is a list of 7 options for the user to choose:
+1. "Meet Orbian Family"
+    User has the option to see a list of all of the Orbians with their respective
+    names.
+
+2. "Compare Orbians"
+    User has the option to compare one Orbian's size (volume) with another.
+
+3. "Orbian Info"
+    User has the option to see the size (volume), height, and age of their Orbians.
+
+4.  "Create Orbian Baby"
+    User has the option to append a new Orbian to the Orbian family by taking the
+    characteristics of one Orbian parent, and another.
+
+5. "Send to Pasture"
+    User has the option to "retire" an Orbian to a pasture, thereby removing it
+    from the list of Orbians within the family.
+
+6. "Orbian Thanos"
+    User has the option to kill 50% of the Orbian family population. This option
+    will randomly select 50% of the Orbians and remove them from the list.
+
+7. "Quit"
+    Program ends.
+
+The menu will continue to print so long as the user has not chosen to quit the
+program.
+
+## Analysis:
+The program is comprised of two files that run the program. The main file (task1.py)
+is responsible for printing the menu, getting user inputs, and displaying results
+that the user wants to see. The orbian.py file contains all of the functions and
+characteristics of Orbian objects. This includes name, volume, radius and height.
+
 
 
 

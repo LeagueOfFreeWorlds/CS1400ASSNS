@@ -20,10 +20,13 @@ class Orbian:
         return self.__NAME
 
     def getVolume(self):
-        return self.__getHeadVolume() * self.__getBodyVolume()
+        return int(self.__getHeadVolume() * self.__getBodyVolume())
 
     def getHeight(self):
-        return self.__getBodyHeight() + self.__getHeadVolume()
+        return self.__getBodyHeight() + (self.__getHeadRadius()) * 2
+
+    def getAge(self):
+        return int((time.time() - self.__BIRTH_TIME) / 5)
 
     def __getHeadVolume(self):
         return 4 / 3 * pi * self.__getHeadRadius() ** 3
@@ -46,7 +49,25 @@ class Orbian:
     ####### ADD OTHER REQUIRED METHODS BELOW. SEE THE ASSIGNMENT DESCRIPTION AND OTHER STARTER CODE FOR INSIGHT ######
     # Dunders:
     def __add__(self, other):
-        return None
+        app1 = list(self.__NAME)
+        app2 = list(other.getName())
+        headR = (self.__HEAD_RADIUS + other.__getHeadRadius()) * 0.25
+        bodyR = (self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25
+        bodyH = (self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125
+        appf = []
+        name = ''
+        appf.append(app1)
+        appf.append(app2)
+        appfl = shuffle(appf)
+        averageL = (len(app1) + len(app2)) // 2
+        for i in range(averageL):
+            if len(appfl) > i:
+                name = ''.join(appfl[i])
+
+        return Orbian(name, headR, bodyR, bodyH)
+
+    def __len__(self):
+        return self.getHeight()
 
     def __gt__(self, other):
         return self.getVolume() > other.getVolume()

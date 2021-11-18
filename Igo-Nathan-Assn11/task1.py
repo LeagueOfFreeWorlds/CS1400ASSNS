@@ -57,7 +57,7 @@ def main():
 def thinking():
     for i in range(5):
         print(".", end="")
-        #sleep(0.5) # You can comment this out while testing to make things go faster
+        sleep(0.5) # You can comment this out while testing to make things go faster
     print()
 
 def selectOrbian(famList, selected=None):
@@ -98,8 +98,12 @@ def compare(famList):
 
 def createBaby(famList):
     #<<<<<<<<<<<<<< Write code to select two orbians to be parents >>>>>>>>>>>>>>>
-    orb1 = orb2 = None  # Remove this line to work on this function. It is here to prevent errors until it's defined
+    orbianObjects = []
+    for i in range(2):
+        orbianObjects.append(selectOrbian(famList))
 
+    orb1 = orbianObjects[0]
+    orb2 = orbianObjects[1]
     ########### DO NOT MODIFY THIS FUNCTION BEYOND THIS LINE ############
     famList.append(orb1 + orb2)
     print("\tGreetings Orbian " + famList[len(famList) - 1].getName())
@@ -114,11 +118,15 @@ def info(famList):
 
 def toPasture(famList):
     #<<<<<<<<<<<<<< COMPLETE THIS ENTIRE FUNCTION >>>>>>>>>>>>>
-    pass # Remove this line to work on this function. It is here to prevent errors until it's defined
+    print("Select which Orbian you wish to retire to the pasture")
+    orbian = selectOrbian(famList)
+    print("Farwell dear " + orbian.getName(), end="")
+    thinking()
+    famList.remove(orbian)
 
 
 def thanosSnap(famList):
-    print("Uh oh. Orbian Thanos just snapped his fingers")
+    print("Uh oh. Orbian Thanos just snapped his fingers", end="")
     thinking()
     #<<<<<<<<<<<<<< COMPLETE THE REST OF THIS FUNCTION >>>>>>>>>>>>>
 
