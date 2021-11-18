@@ -57,7 +57,7 @@ def main():
 def thinking():
     for i in range(5):
         print(".", end="")
-        sleep(0.5) # You can comment this out while testing to make things go faster
+        #sleep(0.5) # You can comment this out while testing to make things go faster
     print()
 
 def selectOrbian(famList, selected=None):
@@ -124,11 +124,13 @@ def toPasture(famList):
     thinking()
     famList.remove(orbian)
 
-
 def thanosSnap(famList):
     print("Uh oh. Orbian Thanos just snapped his fingers", end="")
     thinking()
     #<<<<<<<<<<<<<< COMPLETE THE REST OF THIS FUNCTION >>>>>>>>>>>>>
-
+    familyHalf = len(famList) // 2
+    for i in range(0, familyHalf):
+        randRemove = randint(0, len(famList))
+        del famList[randRemove]
 
 main()

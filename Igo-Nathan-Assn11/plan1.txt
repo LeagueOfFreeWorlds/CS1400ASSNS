@@ -37,7 +37,16 @@ The program is comprised of two files that run the program. The main file (task1
 is responsible for printing the menu, getting user inputs, and displaying results
 that the user wants to see. The orbian.py file contains all of the functions and
 characteristics of Orbian objects. This includes name, volume, radius and height.
-
+These characteristics are used within the main() so that the user can see and change
+the progress of their Orbian family.
+As time progresses, the size of the Orbians will change as they get older. Orbian
+ages are measured in imaginary units called "zungs," which is equal to 5 seconds.
+After an Orbian becomes 2 zungs old (10 seconds), they will have matriculated,
+doubling in size, and tripling in height. Afer this, the Orbian doesn't grow or
+change anymore.
+## Design:
+The Orbian family program design is relatively simple. It only has the user as its
+input, and time is used to govern the age of the Orbians.
 
 
 

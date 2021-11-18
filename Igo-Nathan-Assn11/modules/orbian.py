@@ -55,17 +55,21 @@ class Orbian:
         bodyR = (self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25
         bodyH = (self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125
         appf = []
+        appfs = []
         name = ''
         appf.append(app1)
         appf.append(app2)
-        appfl = shuffle(appf)
         averageL = (len(app1) + len(app2)) // 2
         for i in range(averageL):
-            if len(appfl) > i:
-                name = ''.join(appfl[i])
+            appfs.append(appf[i])
+            name = ''.join(appfs)
+            shuffle(name)
+            name.capitalize()
 
         return Orbian(name, headR, bodyR, bodyH)
 
+    def __sub__(self):
+        return None
     def __len__(self):
         return self.getHeight()
 
