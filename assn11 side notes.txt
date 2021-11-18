@@ -1,0 +1,6 @@
+Some things that are going to be difficult:
+- need to be able to take the names of two orbians
+  and combine them into one.
+- need to be able to compare one orbian with another on
+  the basis of certain characterisitcs.
+-

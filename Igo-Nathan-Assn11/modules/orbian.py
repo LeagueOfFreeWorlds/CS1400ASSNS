@@ -15,6 +15,15 @@ class Orbian:
 
         # This is the only variable
         self.__adult = False
+    # Methods:
+    def getName(self):
+        return self.__NAME
+
+    def getVolume(self):
+        return self.__getHeadVolume() * self.__getBodyVolume()
+
+    def getHeight(self):
+        return self.__getBodyHeight() + self.__getHeadVolume()
 
     def __getHeadVolume(self):
         return 4 / 3 * pi * self.__getHeadRadius() ** 3
@@ -22,14 +31,25 @@ class Orbian:
     def __getBodyVolume(self):
         return pi * self.__getBodyRadius() ** 2 * self.__getBodyHeight()
 
+    def __getHeadRadius(self):
+        return self.__BODY_RADIUS
+
+    def __getBodyRadius(self):
+        return self.__BODY_RADIUS
+    def __getBodyHeight(self):
+        return self.__BODY_HEIGHT
     def __ageCheck(self):
         # Become an adult at 2
         if self.getAge() >= 2:
             self.__adult = True
 
     ####### ADD OTHER REQUIRED METHODS BELOW. SEE THE ASSIGNMENT DESCRIPTION AND OTHER STARTER CODE FOR INSIGHT ######
+    # Dunders:
+    def __add__(self, other):
+        return None
 
-
+    def __gt__(self, other):
+        return self.getVolume() > other.getVolume()
 
 
 

@@ -1,3 +1,10 @@
+#Requirements:
+The program is a simulation of a strange species called "Orbians". When first ran,
+the program will display a title menu:
+"WELCOME TO ORBIAN FAMILY"
+From there, the user has to hit the Enter key (or really any key) to start the orbian
+creation menu.
+
 
 
 # UML ###############
@@ -13,5 +20,6 @@ ORBIAN STARTER:
 - Volume of orbians
 - Age of orbians
 - Name of orbians
-- Time of orbain birth
+- Time of orbian birth
+
 #####################

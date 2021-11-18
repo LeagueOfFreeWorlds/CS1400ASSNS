@@ -1,0 +1,5 @@
+# NOTE: We need to have selectOrbian be given a 'selected' value.
+selectOrbian()
+    orbianSelOne = int(input("Select 1st Orbian to compare:\t"))
+    selectOrbian(selected=orbainSelOne)
+    orbianSelTwo = int(input("Select 2nd Orbian to compare:\t"))
