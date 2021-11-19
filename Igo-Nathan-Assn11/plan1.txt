@@ -77,22 +77,83 @@ by using the '+' operator.
     The name of the new orbian child is equal to a randomly shuffled list of the
     two parents' names.
         app = list(self.__NAME + other.getName())
+    The dunder then returns a new Orbian object to be added to the family list.
+Using the famList of Orbian objects, the rest of the operations that the user can
+perform works in a similar manner to the previous four options described.
+Essentially, with options 5 and 6, we simply use the .remove() del() functions to
+remove Orbians from the famList, since 5 retires an Orbian of choice by the user,
+while 6 removes 50% of the Orbian population randomly selected.
+
+## Testing:
+1. Testing "Meet Orbian Family"
+    Selecting option 1:
+        I am Orbian Deborah
+        I am Orbian Linus
+        I am Orbian Jones
+        I am Orbian Cassie
+2. Compare Orbians
+    Selecting option 2:
+        1) Deborah
+        2) Linus
+        3) Jones
+        4) Cassie
+    Select an Orbian:
+        Select an Orbian: 1
+        1) Deborah
+        2) Linus
+        3) Jones
+        4) Cassie
+    Select an Orbian: 4
+        Orbian Deborah is bigger than Orbian Cassie
+3. Orbian info
+    Selecting option 3:
+        Select an Orbian to view
+        1) Deborah
+        2) Linus
+        3) Jones
+        4) Cassie
+    Select an Orbian:
+        Orbian Linus is 9 zungs old
+        and is 370110 zogs, and 19 zings
+    Testing again ~30 seconds later:
+        Orbian Linus is 16 zungs old
+        and is 370110 zogs, and 19 zings
+4. Create Orbian Baby
+    Selecting option 3:
+
+        1) Deborah
+        2) Linus
+        3) Jones
+        4) Cassie
+    Select an Orbian: 2
+        1) Deborah
+        2) Linus
+        3) Jones
+        4) Cassie
+    Select an Orbian: 4
+        Greetings Orbian Siale
+    Checking Orbian Info:
+    Orbian Siale is 1 zungs old
+        and is 1263 zogs, and 7 zings
+5. Send to Pasture
+    Selecting option 5:
+        Select which Orbian you wish to retire to the pasture
+        1) Deborah
+        2) Linus
+        3) Jones
+        4) Cassie
+    Select an Orbian: 1
+        Farwell dear Deborah.....
+    Checking with "Meet Orbian Family:"
+        I am Orbian Linus
+        I am Orbian Jones
+        I am Orbian Cassie
+6. Orbian Thanos
+    Selecting option 6:
+        Uh oh. Orbian Thanos just snapped his fingers.....
+    Checking with "Meet Orbian Family:"
+        I am Orbian Linus
+        I am Orbian Jones
 
 
 
-# UML ###############
-main():
-- Menu
-- Selection check
-- thinking(): display loading animation.
-
-
-
-#####################
-ORBIAN STARTER:
-- Volume of orbians
-- Age of orbians
-- Name of orbians
-- Time of orbian birth
-
-#####################

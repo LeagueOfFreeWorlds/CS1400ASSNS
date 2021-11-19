@@ -10,7 +10,7 @@ class Orbian:
         self.__HEAD_RADIUS = headRadius
         self.__BODY_RADIUS = bodyRadius
         self.__BODY_HEIGHT = bodyHeight
-        self.__NAME = name
+        self.__NAME = name.capitalize()
         self.__BIRTH_TIME = time.time()
 
         # This is the only variable
@@ -29,7 +29,7 @@ class Orbian:
         return int((time.time() - self.__BIRTH_TIME) / 5)
 
     def adulting(self):
-        if self.getAge == 2:
+        if self.getAge() >= 2:
             self.__HEAD_RADIUS * 2
             self.__BODY_RADIUS * 2
             self.__BODY_HEIGHT * 4
@@ -60,14 +60,14 @@ class Orbian:
         #app2 = list(other.getName())
         #l = app1, app2
         shuffle(app)
-        headR = (self.__HEAD_RADIUS + other.__getHeadRadius()) * 0.25
-        bodyR = (self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25
-        bodyH = (self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125
+        headR = int((self.__HEAD_RADIUS + other.__getHeadRadius()) * 0.25)
+        bodyR = int((self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25)
+        bodyH = int((self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125)
         name = ''
         averageL = (len(self.__NAME + other.getName())) // 2
         for x in range(averageL):
             name += app[x]
-
+        name.capitalize()
         return Orbian(name, headR, bodyR, bodyH)
 
     def __sub__(self):
