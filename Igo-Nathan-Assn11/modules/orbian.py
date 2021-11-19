@@ -28,6 +28,13 @@ class Orbian:
     def getAge(self):
         return int((time.time() - self.__BIRTH_TIME) / 5)
 
+    def adulting(self):
+        if self.getAge == 2:
+            self.__HEAD_RADIUS * 2
+            self.__BODY_RADIUS * 2
+            self.__BODY_HEIGHT * 4
+        return Orbian()
+
     def __getHeadVolume(self):
         return 4 / 3 * pi * self.__getHeadRadius() ** 3
 
@@ -51,20 +58,16 @@ class Orbian:
     def __add__(self, other):
         app1 = list(self.__NAME)
         app2 = list(other.getName())
+        l = app1, app2
+        shuffle(l)
+        ls = tuple(l)
         headR = (self.__HEAD_RADIUS + other.__getHeadRadius()) * 0.25
         bodyR = (self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25
         bodyH = (self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125
         appf = []
-        appfs = []
-        name = ''
-        appf.append(app1)
-        appf.append(app2)
         averageL = (len(app1) + len(app2)) // 2
-        for i in range(averageL):
-            appfs.append(appf[i])
-            name = ''.join(appfs)
-            shuffle(name)
-            name.capitalize()
+        for x in ls:
+            name = appf.append()
 
         return Orbian(name, headR, bodyR, bodyH)
 

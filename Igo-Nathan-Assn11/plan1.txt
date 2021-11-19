@@ -46,7 +46,11 @@ doubling in size, and tripling in height. Afer this, the Orbian doesn't grow or
 change anymore.
 ## Design:
 The Orbian family program design is relatively simple. It only has the user as its
-input, and time is used to govern the age of the Orbians.
+input, and time is used to govern the age of the Orbians. From within the menu, the user can see their Orbian family (selecting option 1).
+    Orbians are displayed from the Orbian() object list, by using the .getName() method within the Orbian class. getName() will then return the entire names of the orbians within the list:
+        Orbian(name, head_radius, body_radius, body_height)
+    getName() simply returns the name instances of the Orbian objects, and then concatenated in a print function for the user to see.
+Comparing orbians takes the height values of one Orbian object, and another Orbian that a user wishes to compare with, and then uses a __gt__ dunder to compare the height instances of the two Orbians.
 
 
 
