@@ -51,6 +51,32 @@ input, and time is used to govern the age of the Orbians. From within the menu, 
         Orbian(name, head_radius, body_radius, body_height)
     getName() simply returns the name instances of the Orbian objects, and then concatenated in a print function for the user to see.
 Comparing orbians takes the height values of one Orbian object, and another Orbian that a user wishes to compare with, and then uses a __gt__ dunder to compare the height instances of the two Orbians.
+    return (first object volume instance) > (second object volume instance)
+The user is able to select what Orbian they wish to display with a simple function (selectOrbian)
+that returns index based on a printed list of Orbians.
+
+Obtaining Orbian info is done in a manner similar to the previous operations
+described above. The info function located within the main() file retrieves three
+instances from an Orbian object requested by the user. selectOrbian is used to
+display a list of Orbians for the user to choose which one they want to see
+information about. Once the user has chosen what Orbian they want to see information
+about, the program will then take information instances (name, age, size). These
+instances are then printed as a concatenated string to the terminal.
+    print("Orbian " + orbian.getName() + " is " + str(orbian.getAge()) + " zungs old")
+    print("\tand is " + str(orbian.getVolume()) + " zogs, and " + str(len(orbian)) + " zings")
+Creating a new Orbian child is another functionality of the Orbian class object.
+A user will first choose two Orbians to become the parent using the selectOrbian
+function. From there, we take advantage of dunders to create a new Orbian child,
+by using the '+' operator.
+    The __add__ operator will retrieve the name and size of the two Orbian parents,
+    and then proceed to output the sum of the two parent sizes multiplied by a
+    constant.
+        headR = (self.__HEAD_RADIUS + other.__getHeadRadius()) * 0.25
+        bodyR = (self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25
+        bodyH = (self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125
+    The name of the new orbian child is equal to a randomly shuffled list of the
+    two parents' names.
+        app = list(self.__NAME + other.getName())
 
 
 

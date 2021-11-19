@@ -56,18 +56,17 @@ class Orbian:
     ####### ADD OTHER REQUIRED METHODS BELOW. SEE THE ASSIGNMENT DESCRIPTION AND OTHER STARTER CODE FOR INSIGHT ######
     # Dunders:
     def __add__(self, other):
-        app1 = list(self.__NAME)
-        app2 = list(other.getName())
-        l = app1, app2
-        shuffle(l)
-        ls = tuple(l)
+        app = list(self.__NAME + other.getName())
+        #app2 = list(other.getName())
+        #l = app1, app2
+        shuffle(app)
         headR = (self.__HEAD_RADIUS + other.__getHeadRadius()) * 0.25
         bodyR = (self.__BODY_RADIUS + other.__getBodyRadius()) * 0.25
         bodyH = (self.__BODY_HEIGHT + other.__getBodyHeight()) * 0.125
-        appf = []
-        averageL = (len(app1) + len(app2)) // 2
-        for x in ls:
-            name = appf.append()
+        name = ''
+        averageL = (len(self.__NAME + other.getName())) // 2
+        for x in range(averageL):
+            name += app[x]
 
         return Orbian(name, headR, bodyR, bodyH)
 
