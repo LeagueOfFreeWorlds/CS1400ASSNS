@@ -1,0 +1,5 @@
+Plan list:
+for i in list:
+    for j in range(i):
+        if j > i:
+            print(i)
