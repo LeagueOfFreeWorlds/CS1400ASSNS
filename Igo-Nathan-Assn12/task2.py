@@ -9,29 +9,45 @@ def main():
     print("Welcome. Please enter values into the terminal to populate a list for calculation.")
     print("Hit ENTER once you are satisfied with the amount of data you've provided.")
     while enterPressed != True:
-        inputValue = int(input("Enter a # value:\t"))
+        inputValue = input("Enter a # value:\t")
         if inputValue == '':
             break
         else:
             inputList.append(inputValue)
 
-    print(displayCalculations(inputValue))
+    print(displayCalculations(inputList))
 
-main()
+
 
 def displayCalculations(list):
+    sum = sumVal(list)
     print("The length of the list is:\t" + str(len(list)))
-    print("The maximum value in the array is:\t" + maxVal(list))
-    print("The minimum value in the array is:\t" + minVal(list))
-    print("The sum of all values is:\t" + sumVal(list))
-    print("The average value of the list is:\t" + avrg(list))
+    print("The maximum value in the array is:\t" + str(maxVal(list)))
+    print("The minimum value in the array is:\t" + str(minVal(list, maxVal(list))))
+    print("The sum of all values is:\t" + str(sum))
+    print("The average value of the list is:\t" + str(avrg(list, sum)))
+
 def maxVal(list):
     maximum = 0
     for i in list:
-        if (i > maximum):
-            maximum = i
-    return maximum
-def minVal(list):
-    minimum = 0
-    for i in range(list):
-        if
+        if (int(i) > maximum):
+            maximum = int(i)
+    return int(maximum)
+
+def minVal(list, smallest):
+    for i in list:
+        if int(i) < smallest:
+            smallest = int(i)
+    return smallest
+
+def sumVal(list):
+    sum = 0
+    for i in list:
+        sum += int(i)
+    return sum
+
+def avrg(list, sum):
+    average = sum // (len(list) - 1)
+    return average
+
+main()
