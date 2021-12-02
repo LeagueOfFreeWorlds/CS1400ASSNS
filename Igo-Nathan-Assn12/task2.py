@@ -26,5 +26,12 @@ def displayCalculations(list):
     print("The sum of all values is:\t" + sumVal(list))
     print("The average value of the list is:\t" + avrg(list))
 def maxVal(list):
+    maximum = 0
     for i in list:
-
+        if (i > maximum):
+            maximum = i
+    return maximum
+def minVal(list):
+    minimum = 0
+    for i in range(list):
+        if
