@@ -8,7 +8,7 @@ class Deck:
         self.__deck = []
         for i in range(102):
             self.__deck.append(Card(i))
-        random.shuffle(self.__deck)
+        shuffle(self.__deck)
 
     def draw(self):
         return self.__deck.pop()

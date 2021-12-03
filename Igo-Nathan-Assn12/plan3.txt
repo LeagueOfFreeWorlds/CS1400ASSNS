@@ -1,1 +1,26 @@
 "Gronky" Program
+# Requirements:
+The program is a basic card dealer that gives the user a desired amount of 
+cards that they want, shuffled. The cards are also not a standard deck of 
+52 cards, as they are instead a unique cardset called 'Gronky,' which
+consists of 107 cards, with 17 ranks instead of the typical 13, and with 7 
+suits, instead of the typical 4. Furthermore, instead of being called the 
+usual "ranks" and "suits," they are called "Titles" and "Gangs."
+
+The program has to be able to shuffle the deck of 107 unique cards, and then
+draw the desired amount of cards the user wants to the console. The program
+also has to be able to tell the user if they want to have the cards 
+reshuffled, or if they wish to quit once they've finished with shuffling.
+
+## Analysis:
+The program consists of four files:
+    card.py
+        - Class that stores all of the card attributes, such as title and
+          gang affiliation
+    deck.py
+        - Class that contains function for the deck that performs shuffling
+          of the cards.
+    cardmap.py
+        - Contains all of the card titles and gangs. 
+    main.py (task3.py):
+        - Main part of the program that the user interfaces with.

@@ -8,7 +8,7 @@ class Card:
         return Title[self.__id % 17]
 
     def getGang(self):
-        return Gang[self.__id % 17]
+        return Gang[self.__id // 17]
 
-    def __str__(self):
+    def __repr__(self):
         return self.getTitle() + " Of " + self.getGang()
