@@ -13,8 +13,12 @@ def main():
         runAgain = input("Would you like the dealer to reshuffle? (Y/n):\t")
         if runAgain = "n" or "N" or "No" or "no" or "NO":
             isRunning = False
+    print("Thanks for playing!")
+## Loading animation:
 def thinking():
-
+    for i in range(10):
+        print(".", end="")
+        sleep(0.5)
+    print()
 
 main()
-print("Thanks for playing!")
