@@ -24,3 +24,47 @@ The program consists of four files:
         - Contains all of the card titles and gangs. 
     main.py (task3.py):
         - Main part of the program that the user interfaces with.
+When the user first starts the program, the program will display a prompt
+asking: "How many cards do you wish to be dealt?"
+The user will then enter a number of the amount of cards they wish to have 
+dealt to them. Once the user has entered a number, the program will then 
+'shuffle' the deck, as card objects are randomly picked from the deck, and
+displayed to the console. 
+EXAMPLE:
+    "How many cards do you wish to be dealt?    "
+    User inputs 5
+    "Shuffling Deck......" - Program takes 10 seconds to load.
+    [Two Of Elbows, Baker Of Keiths, Baker Of Pollos, Armorer Of Jets, Seven Of Yokels]
+    "Would you like the dealer to reshuffle? (Y/n): "
+        User can choose to rerun by default pressing Enter. If user types n,
+        No, no, NO, or N, the program will quit and write "Thanks for Playing!"
+## Design:
+The card's  attributes are stored in card.py, as mentioned in the analysis
+section of this document, where the card has three functions: 
+    1. A function that returns the card's Title.
+        - The "title" is similar to "ranks" with a regular deck of 52 cards.
+    ************************************
+    def getTitle(self):
+        return Title[self.__id % 17]
+    ************************************
+    2. A function that returns the card's gang. The "gang" is similar to a 
+    "suits" with a regular deck of 52 cards. 
+     ************************************
+     def getGang(self):
+        return Gang[self.__id // 17]
+     ************************************
+    3. Returning both the card's Title and Gang, so that the user knows
+    both of the card's attributes. 
+     ************************************
+    def __repr__(self):
+        return self.getTitle() + " Of " + self.getGang()
+     ************************************
+The Title and gangs are all stored within the cardmap.py file, that the card
+class uses for assigning to the cards:
+    Title = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Baker", "Jester", "Page", "Scribe", "Squire", "Armorer", "Marshall"]
+    Gang = ["Jets", "Pollos", "Slugs", "Yokels", "Keiths", "Elbows"]
+The deck class is where the cards are randomly selected and added to an empty
+array that is later printed to the console for the user to see.
+
+
+
