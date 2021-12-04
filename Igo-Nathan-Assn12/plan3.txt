@@ -64,7 +64,49 @@ class uses for assigning to the cards:
     Title = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Baker", "Jester", "Page", "Scribe", "Squire", "Armorer", "Marshall"]
     Gang = ["Jets", "Pollos", "Slugs", "Yokels", "Keiths", "Elbows"]
 The deck class is where the cards are randomly selected and added to an empty
-array that is later printed to the console for the user to see.
+array that is later printed to the console for the user to see. As a result
+of its randomness, we use the provided random module that python has for
+randomly shuffling the deck.
 
+The deck method 'shuffle' is what employs the random module function. When
+the deck is called to shuffle, the shuffle method will start by creating an
+empty deck list, and then populating it with the entire 102 cards in the 
+stack, then finally using the `randint.shuffle` module function to randomly
+shuffle the cards on the deck. From there, another method called 'draw()' will
+return the last cards on the list using the `.pop()` function: 
+     ************************************
+    def shuffle(self):
+        self.__deck = []
+        for i in range(102):
+            self.__deck.append(Card(i))
+        shuffle(self.__deck)
 
+    def draw(self):
+        return self.__deck.pop()
+     ************************************
+From within the main class, a for loop is used to draw the amount of cards
+that the user desires. The loop appends the cards to an empty list that is
+printed to the console. The cards appended are from the deck draw() function:
+
+************************************
+From within the main class, a for loop is used to draw the amount of cards
+dealerAmount = int(input("How many cards do you wish to be dealt?\t"))
+print("Shuffling Deck:\t")
+thinking()
+for i in range(dealerAmount):
+    dealerHand.append(deck.draw())
+    print(dealerHand)
+
+************************************
+## Testing:
+Entering negative numbers:
+How many cards do you wish to be dealt? -5
+Shuffling Deck.....
+[Page Of Keiths, Page Of Jets, Three Of Yokels, Armorer Of Elbows, Nine Of Yokels]
+
+Reshuffling deck:
+Would you like the dealer to reshuffle? (Y/n): y 
+How many cards do you wish to be dealt? 5
+Shuffling Deck.......
+[Eight Of Keiths, Eight Of Yokels, Two Of Jets]
 

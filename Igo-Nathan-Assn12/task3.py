@@ -3,9 +3,9 @@ from time import sleep
 def main():
     deck = Deck()
     isRunning = True
-    dealerHand = []
     while isRunning:
-        dealerAmount = int(input("How many cards do you wish to be dealt?\t"))
+        dealerHand = []
+        dealerAmount = abs(int(input("How many cards do you wish to be dealt?\t")))
         print("Shuffling Deck:\t")
         thinking()
         for i in range(dealerAmount):
