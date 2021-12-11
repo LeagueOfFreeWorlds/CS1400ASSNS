@@ -20,8 +20,34 @@ __init__(id):
     toggleFlipped - Checks if flipped is True or False, and reverses its boolean value.
 
     displayCard - Takes the return value of the getValue method and returns as a string if the flipped method is True.
+
 ******************************************************
 ***************************
 ## memoryboard:
 ***************************
 __init__(rows, columns)
+    self.columns - int
+    self.rows - int
+    self.userSelection - string
+    self.flippedLocation - list
+    self.board - list
+    self.createBoard() - method
+***************************
+    createBoard()
+    getBoard()
+    flipCard()
+    isCardFlipped()
+    isMatch()
+
+******************************************************
+    createBoard - Populates board list with a random set of characters on each row to be printed out in the getBoard() function.
+
+    getBoard() - Prints a string of the board list to the console. Also flips cards that have been selected under the flipCard() method.
+
+    flipCard() - Updates user selection to the value of the location where the user has requested a flip.
+
+    isCardFlipped() - Determines whether or not the location where the user has selected has been flipped or not, by determining whether the location is a blank space, or contains a symbol.
+
+    isMatch() - Takes two positions from the user and determines whether or not the two locations on the board are identical in value.
+
+******************************************************
