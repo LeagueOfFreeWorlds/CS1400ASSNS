@@ -1,0 +1,27 @@
+# Plan 1 UML for memorycard and memoryboard
+
+***************************
+## memorycard:
+***************************
+__init__(id):
+    self.id - int
+    self.flipped - boolean
+***************************
+    isFlipped()
+    getValue()
+    toggleFlipped()
+    displayCard()
+
+******************************************************
+    isFlipped - Checks if selected card has been flipped or not. Returns boolean.
+
+    getValue - Returns the id integer value of the card currently selected.
+
+    toggleFlipped - Checks if flipped is True or False, and reverses its boolean value.
+
+    displayCard - Takes the return value of the getValue method and returns as a string if the flipped method is True.
+******************************************************
+***************************
+## memoryboard:
+***************************
+__init__(rows, columns)

@@ -5,9 +5,12 @@ class MemoryBoard:
     def __init__(self, rows, columns):
         self.__columns = columns
         self.__rows = rows
+        self.__userSelection = ''
+        self.__flippedLocation = []
         self.__board = []
+        self.createBoard()
 
-    def getBoard(self):
+    def createBoard(self):
         letter = '!'
         letterList = []
         for i in range(self.__rows):
@@ -17,13 +20,18 @@ class MemoryBoard:
                 shuffle(letterList)
                 self.__board[i].append(letterList[i])
                 letter = chr(ord(letter) + 1)
+
+    def getBoard(self):
         string = ''
         for i in range(self.__rows):
             for j in range(self.__columns):
-                if self.__board[i][j] == 'z':
+                if str(self.__board[i][j]) == self.__userSelection:
                     string += str(self.__board[i][j])
                 else:
                     string += ' '
+
+
+
                 string += ' | '
             string += '\n'
             string += '--------------------------------\n'
@@ -32,17 +40,20 @@ class MemoryBoard:
 
     # Changes the value on the selected matrix.
     def flipCard(self, xAx, yAx):
-        self.__board[xAx][yAx] = 'a'
-        self.getBoard()
+        self.__userSelection = self.__board[xAx][yAx]
+        if self.isCardFlipped(xAx, yAx):
+            self.__userSelection = ''
+            self.getBoard()
+        else:
+            self.getBoard()
 
 
     # Quick check to determine if the card has already been flipped:
-    ## TBD - Please go back to this:
     def isCardFlipped(self, xAx, yAx):
         if self.__board[xAx][yAx] != ' ':
-            return True
-        else:
             return False
+        else:
+            return True
     ## TBD - Please go back to this:
     def isMatch(self, pos1, pos2):
         if self.__board[pos1] == board[pos2]:
