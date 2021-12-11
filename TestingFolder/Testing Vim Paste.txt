@@ -1,0 +1,5 @@
+Copy and Paste to/from Vim from/to Other Programs!
+
+For some reason, Ctrl + Shift + V doesn't actually paste the entire line.
+Instead, it removes the first or second letters in the text, and then
+the rest is copied just fine.

@@ -1,6 +1,6 @@
 # Use this test code to make sure your memoryboard.py and memorycard.py files work like they should
 
-from modules.gameboard import GameBoard
+from modules.memoryboard import MemoryBoard
 from modules.memorycard import MemoryCard
 
 def main():
